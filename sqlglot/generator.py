@@ -850,7 +850,7 @@ class Generator:
         if not partition and not order and not spec and alias:
             return f"{this} {alias}"
 
-        return f"{this} ({alias}{partition_sql}{order_sql}{spec_sql})"
+        return f"{this} ({partition_sql}{order_sql}{spec_sql}) AS {alias}"
 
     def window_spec_sql(self, expression):
         kind = self.sql(expression, "kind")
